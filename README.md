@@ -47,8 +47,8 @@ GET /v1/sessions/{session_id}
 {
   "_session": "{session_id}",
   "_namespaces": [
-    "lastSeen",
-    "favoriteThings"
+    "{namespace1}",
+    "{namespace2}"
   ]
 }
 ```
@@ -85,8 +85,8 @@ GET /v1/sessions/{session_id}/{namespace}
 
 ```json
 {
-  "_session": "user-1337",
-  "_namespace": "favoriteThings",
+  "_session": "{session_id}",
+  "_namespace": "{namespace}",
   "_modified": "2017-03-26T23:14:10.617Z",
   "things": [
     "cats",
@@ -109,18 +109,18 @@ GET /v1/sessions/{session_id}?namespaces={namespace1}&namespaces={namespace2}
 
 ```json
 {
-  "_session": "user-1337",
-  "_namespaces": [ "favoriteThings", "lastSeen", "somethingElse" ],
-  "favoriteThings": {
+  "_session": "{session_id}",
+  "_namespaces": [ "{namespace1}", "{namespace2}", "{namespace3}" ],
+  "{namespace1}": {
     "things": [ "cats", "dogs" ],
-    "_session": "user-1337",
-    "_namespace": "favoriteThings",
+    "_session": "{session_id}",
+    "_namespace": "{namespace1}",
     "_modified": "2017-03-26T23:14:10.617Z"
   },
-  "lastSeen": {
+  "{namespace2}": {
     "when": "2017-03-26T15:25:25Z",
-    "_session": "user-1337",
-    "_namespace": "lastSeen",
+    "_session": "{session_id}",
+    "_namespace": "{namespace2}",
     "_modified": "2017-03-26T23:13:44.095Z"
   }
 }
@@ -138,10 +138,7 @@ PUT /v1/sessions/{session_id}/{namespace}
 
 ```json
 {
-  "things": [
-    "cats",
-    "dogs"
-  ]
+  "things": [ "cats", "dogs" ]
 }
 ```
 
@@ -149,13 +146,10 @@ PUT /v1/sessions/{session_id}/{namespace}
 
 ```json
 {
-  "_session": "user-1337",
-  "_namespace": "favoriteThings",
+  "_session": "{session_id}",
+  "_namespace": "{namespace}",
   "_modified": "2017-03-26T23:14:10.617Z",
-  "things": [
-    "cats",
-    "dogs"
-  ]
+  "things": [ "cats", "dogs" ]
 }
 ```
 
@@ -238,3 +232,4 @@ properties:
 * Allow for atomic updates on a per-key basis (would require ReJSON module)
 * Port from Node to Go
 * Allow refferential schemas (e.g. object of type "User")
+* Allow JSON root to be non-object
