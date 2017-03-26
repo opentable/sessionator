@@ -1,0 +1,46 @@
+type: object
+allowUnknown: true
+properties:
+  name:
+    type: string
+    min: 1
+    max: 100
+  age:
+    type: integer
+    min: 0
+    max: 120
+  height:
+    type: number
+    min: 0.0
+    max: 200.0
+  friends:
+    type: array
+    items:
+      type: object
+      allowUnknown: false
+      properties:
+        name:
+          type: string
+        age:
+          type: integer
+  cool:
+    type: boolean
+    optional: true
+  language:
+    type: string
+    enum:
+    - en-US
+    - en-GB
+    - de-DE
+  pet:
+    type: object
+    allowUnknown: false
+    properties:
+      name:
+        type: string
+      species:
+        type: string
+        enum:
+        - cat
+        - dog
+        - fish
