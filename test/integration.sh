@@ -1,3 +1,5 @@
+# HTTP_PORT=9001 ./sessionator.js
+
 curl -s -X DELETE -H "Content-Type: application/json" "http://localhost:9001/v1/sessions/user-1337" | jq -cM "."
 
 echo 'Get Unknown Session'
