@@ -11,7 +11,7 @@ then
   echo $EXPECTED
   echo "ACTUAL"
   echo $ACTUAL
-  exit
+  exit 1
 else
   echo "OK"
 fi
@@ -27,7 +27,7 @@ then
   echo $EXPECTED
   echo "ACTUAL"
   echo $ACTUAL
-  exit
+  exit 1
 else
   echo "OK"
 fi
@@ -42,7 +42,7 @@ then
   echo $EXPECTED
   echo "ACTUAL"
   echo $ACTUAL
-  exit
+  exit 1
 else
   echo "OK"
 fi
@@ -57,7 +57,7 @@ then
   echo $EXPECTED
   echo "ACTUAL"
   echo $ACTUAL
-  exit
+  exit 1
 else
   echo "OK"
 fi
@@ -72,7 +72,7 @@ then
   echo $EXPECTED
   echo "ACTUAL"
   echo $ACTUAL
-  exit
+  exit 1
 else
   echo "OK"
 fi
@@ -87,7 +87,7 @@ then
   echo $EXPECTED
   echo "ACTUAL"
   echo $ACTUAL
-  exit
+  exit 1
 else
   echo "OK"
 fi
@@ -102,7 +102,7 @@ then
   echo $EXPECTED
   echo "ACTUAL"
   echo $ACTUAL
-  exit
+  exit 1
 else
   echo "OK"
 fi
